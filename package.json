@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@csstools/normalize.css": "^12.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "prettier": "^2.8.8"
+  }
+}
