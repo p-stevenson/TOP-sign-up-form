@@ -51,9 +51,26 @@ svg {
   height: 14em;
   background-color: hsla(0, 0%, 57%, 0.158);
   box-shadow: 0em 0.1em 0.3em 0em rgba(0, 0, 0, 0.205);
+  border: 1px solid rgba(0, 0, 0, 0.315);
+  border-style: solid none none none;
 }
 
 .form-container {
-  border-color: rebeccapurple;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   flex: 2 1 auto;
+  border: 1px solid rgba(0, 0, 0, 0.315);
+  border-style: none solid none none;
+}
+
+form {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  top: 14rem;
+  background-color: rgba(102, 51, 153, 0.342);
+  box-shadow: 0em 0.1em 0.3em 0em rgba(0, 0, 0, 0.205);
+  border: 1px solid rgba(0, 0, 0, 0.315);
+  border-style: solid solid none none;
 }
