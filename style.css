@@ -1,0 +1,59 @@
+:root {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  /* border: 3px solid black; */
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100vh;
+  border-color: hotpink;
+}
+
+.container {
+  display: flex;
+  min-width: 1200px;
+  max-width: 1920px;
+  border-color: aqua;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 1 1 0;
+  min-width: 500px;
+  border: 1px solid rgba(0, 0, 0, 0.315);
+  border-style: none solid none solid;
+}
+
+.background {
+  flex: 1 1 auto;
+  border-color: goldenrod;
+}
+
+svg {
+  fill-opacity: 30%;
+}
+
+.logo {
+  position: absolute;
+  top: 14em;
+  flex: 0 1 auto;
+  width: 100%;
+  height: 14em;
+  background-color: hsla(0, 0%, 57%, 0.158);
+  box-shadow: 0em 0.1em 0.3em 0em rgba(0, 0, 0, 0.205);
+}
+
+.form-container {
+  border-color: rebeccapurple;
+  flex: 2 1 auto;
+}
