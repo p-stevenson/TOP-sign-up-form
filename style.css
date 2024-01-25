@@ -81,7 +81,7 @@ svg.hero {
   height: 12rem;
 }
 
-.form-container {
+.main-content {
   position: relative;
   display: flex;
   flex-direction: column;
