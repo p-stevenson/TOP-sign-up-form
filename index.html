@@ -46,31 +46,32 @@
         <p class="call-to-action">You <em>know</em> you want to.</p>
 
         <seciton class="form-container">
-          <h1 class="sign-up-form" id="form-title">Let' Do This!</h1>
+          <h1 class="title" id="form-title">Let' Do This!</h1>
           <fieldset>
             <legend class="visually-hidden">User Sign up Form</legend>
             <form class="sign-up-form"action="#" method="get">
-              <p>
+              <p class="column-1">
                 <label for="forename">
-                  <span>First Name</span>
+                  <span>FIRST NAME</span>
                   <strong>
                     <span aria-label="required">*</span>
                   </strong>
                 </label>
-                <input type="text" name="forename" id="forename" required>
+                <input type="text" name="forename" id="forename" required placeholder="Sam" pattern="[a-zA-Z0-9]+
+                ">
               </p>
               <p>
                 <label for="surname">
-                  <span>Surname</span>
+                  <span>SURNAME</span>
                 <strong>
                   <span aria-label="required">*</span>
                 </strong>
               </label>
-                <input type="text" name="surname" id="surname" required>
+                <input type="text" name="surname" id="surname" required placeholder="Samsonite">
               </p>
               <p>
                 <label for="email">
-                  <span>Email</span>
+                  <span>EMAIL</span>
                   <strong>
                     <span aria-label="Email">*</span>
                   </strong>
@@ -79,26 +80,28 @@
               </p>
               <p>
                 <label for="phone-number">
-                  <span>Phone Number</span>
+                  <span>PHONE NUMBER</span>
                 </label>
                 <input type="tel" name="phone-number" id="phone-number">
               </p>
               <p>
                 <label for="password">
-                  <span>Password</span>
+                  <span>PASSWORD</span>
                   <strong>
                     <span aria-label="required">*</span>
                   </strong>
                 </label>
                 <input type="password" name="password" id="password" required>
               </p>
-              <label for="password-confirm">
-                <span>Confirm Password</span>
-                <strong>
-                  <span aria-label="required">*</span>
-                </strong>
-              </label>
-              <input type="password" name="password-confirm" id="password-confirm" required>
+              <p>
+                <label for="password-confirm">
+                  <span>CONFIRM PASSWORD</span>
+                  <strong>
+                    <span aria-label="required">*</span>
+                  </strong>
+                </label>
+                <input type="password" name="password-confirm" id="password-confirm" required>
+              </p>
             </form>
           </fieldset>
         </seciton>
