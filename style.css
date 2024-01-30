@@ -108,10 +108,17 @@ p em {
   color: black;
 }
 
+p.instructions > em {
+  font-family: Arial, var(--system-ui);
+  font-size: 10px;
+  font-weight: 200;
+  padding: 0 0 0 3rem;
+}
+
 .form-container {
   position: absolute;
   width: 100%;
-  height: 22rem;
+  height: 23rem;
   top: 32rem;
   background-color: rgba(102, 51, 153, 0.342);
   box-shadow: 0em 0.1em 0.3em 0em rgba(0, 0, 0, 0.205);
@@ -146,38 +153,60 @@ fieldset {
 }
 
 label {
-  flex: 1 0 auto;
+  /* flex: 0 0 auto; */
   font-family: "Roboto", var(--system-ui);
+  color: rgb(32, 32, 32);
 }
 
 input {
   appearance: none;
   outline: none;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="tel"] {
   width: 100%;
-  height: 1.5rem;
+  height: 2rem;
   border: 1px solid rgba(0, 0, 0, 0.397);
   border-radius: 4px;
   padding: 0 0 0 0.5rem;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-input[type="tel"]:focus {
-  border: 1px solid rgb(75, 159, 255);
+input:focus {
+  border: 2px solid rgb(75, 159, 255);
 }
 
-input[type="text"]:invalid,
-input[type="email"]:invalid,
-input[type="password"]:invalid,
-input[type="tel"]:invalid {
-  border: 1px solid rgb(255, 75, 75);
+input:user-invalid {
+  border: 2px solid rgb(255, 75, 75);
+}
+
+button {
+  position: absolute;
+  top: 59rem;
+  margin: 0 0 0 3rem;
+  width: 15rem;
+  height: 50px;
+  border: 1px solid rgb(121, 121, 121);
+  border-radius: 12px;
+  font-family: "Roboto", var(--system-ui);
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: rgb(32, 32, 32);
+  background-color: rgba(102, 51, 153, 0.342);
+  cursor: pointer;
+  box-shadow: -0.2em 0.2em 0.3em 0em rgba(0, 0, 0, 0.205);
+}
+
+button + p {
+  position: absolute;
+  top: 65rem;
+  margin: 0 0 0 3rem;
+  font-family: "Roboto", var(--system-ui);
+  font-size: 1.3rem;
+}
+
+a:link,
+a:visited,
+a:hover {
+  color: rgb(79, 97, 81);
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .visually-hidden {

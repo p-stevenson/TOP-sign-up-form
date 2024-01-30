@@ -49,7 +49,8 @@
           <h1 class="title" id="form-title">Let' Do This!</h1>
           <fieldset>
             <legend class="visually-hidden">User Sign up Form</legend>
-            <form class="sign-up-form"action="#" method="get">
+            <p class="instructions"><em>all fields marked with "*" must be completed</em></p>
+            <form class="sign-up-form" id="signUpForm" action="#" method="get">
               <p class="column-1">
                 <label for="forename">
                   <span>FIRST NAME</span>
@@ -57,8 +58,7 @@
                     <span aria-label="required">*</span>
                   </strong>
                 </label>
-                <input type="text" name="forename" id="forename" required placeholder="Sam" pattern="[a-zA-Z0-9]+
-                ">
+                <input type="text" name="forename" id="forename" pattern="^([a-zA-Z][a-zA-Z]*){2,32}$" required placeholder="Sam">
               </p>
               <p>
                 <label for="surname">
@@ -67,7 +67,7 @@
                   <span aria-label="required">*</span>
                 </strong>
               </label>
-                <input type="text" name="surname" id="surname" required placeholder="Samsonite">
+                <input type="text" name="surname" id="surname" autocomplete="family-name" required placeholder="Samsonite" pattern="^([a-zA-Z][a-zA-Z]*){2,32}$">
               </p>
               <p>
                 <label for="email">
@@ -76,13 +76,13 @@
                     <span aria-label="Email">*</span>
                   </strong>
                 </label>
-                <input type="email" name="email" id="email" required>
+                <input type="email" name="email" id="email" required placeholder="joe@example.com">
               </p>
               <p>
                 <label for="phone-number">
                   <span>PHONE NUMBER</span>
                 </label>
-                <input type="tel" name="phone-number" id="phone-number">
+                <input type="tel" name="phone-number" id="phone-number" pattern="^((00|0|+)?353[1-9]{1}[0-9]{7,9})$" placeholder="+353859555123"
               </p>
               <p>
                 <label for="password">
@@ -91,7 +91,7 @@
                     <span aria-label="required">*</span>
                   </strong>
                 </label>
-                <input type="password" name="password" id="password" required>
+                <input type="password" name="password" id="password" required minlength="8" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
               </p>
               <p>
                 <label for="password-confirm">
@@ -100,11 +100,13 @@
                     <span aria-label="required">*</span>
                   </strong>
                 </label>
-                <input type="password" name="password-confirm" id="password-confirm" required>
+                <input type="password" name="password-confirm" id="password-confirm" required minlength="8" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
               </p>
             </form>
           </fieldset>
         </seciton>
+        <button type="submit" form="signUpForm">Create Account</button>
+        <p>Already have an account? <a href="#">Log in</a></p>
       </section>
     </div>
   </body>
