@@ -33,7 +33,7 @@
             class="logo"
             id="logo-image"
             src="images/mononoke-hime-logo_v6.webp"
-            alt="Line drawing of Princess Mononoke head and shoulders looking sternly to the left"
+            alt="Line drawing of Princess Mononoke's head and shoulders looking sternly to the left"
           />
         </div>
       </section>
@@ -51,61 +51,74 @@
             <legend class="visually-hidden">User Sign up Form</legend>
             <p class="instructions"><em>all fields marked with "*" must be completed</em></p>
             <form class="sign-up-form" id="signUpForm" action="#" method="get">
-              <p class="column-1">
-                <label for="forename">
-                  <span>FIRST NAME</span>
+              <div id="forenameContainer" class="user-info">
+                <p>
+                  <label for="forename">
+                    <span>FIRST NAME</span>
+                    <strong>
+                      <span aria-label="required">*</span>
+                    </strong>
+                  </label>
+                  <input type="text" name="forename" id="forename" pattern="^([a-zA-Z][a-zA-Z]*){2,32}$" required placeholder="Sam">
+                </p>
+              </div>
+              <div id="surnameContainer" class="user-info">
+                <p>
+                  <label for="surname">
+                    <span>SURNAME</span>
                   <strong>
                     <span aria-label="required">*</span>
                   </strong>
                 </label>
-                <input type="text" name="forename" id="forename" pattern="^([a-zA-Z][a-zA-Z]*){2,32}$" required placeholder="Sam">
-              </p>
-              <p>
-                <label for="surname">
-                  <span>SURNAME</span>
-                <strong>
-                  <span aria-label="required">*</span>
-                </strong>
-              </label>
-                <input type="text" name="surname" id="surname" autocomplete="family-name" required placeholder="Samsonite" pattern="^([a-zA-Z][a-zA-Z]*){2,32}$">
-              </p>
-              <p>
-                <label for="email">
-                  <span>EMAIL</span>
-                  <strong>
-                    <span aria-label="Email">*</span>
-                  </strong>
-                </label>
-                <input type="email" name="email" id="email" required placeholder="joe@example.com">
-              </p>
-              <p>
-                <label for="phone-number">
-                  <span>PHONE NUMBER</span>
-                </label>
-                <input type="tel" name="phone-number" id="phone-number" pattern="^((00|0|+)?353[1-9]{1}[0-9]{7,9})$" placeholder="+353859555123"
-              </p>
-              <p>
-                <label for="password">
-                  <span>PASSWORD</span>
-                  <strong>
-                    <span aria-label="required">*</span>
-                  </strong>
-                </label>
-                <input type="password" name="password" id="password" required minlength="8" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
-              </p>
-              <p>
-                <label for="password-confirm">
-                  <span>CONFIRM PASSWORD</span>
-                  <strong>
-                    <span aria-label="required">*</span>
-                  </strong>
-                </label>
-                <input type="password" name="password-confirm" id="password-confirm" required minlength="8" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
-              </p>
+                  <input type="text" name="surname" id="surname" autocomplete="family-name" required placeholder="Samsonite" pattern="^([a-zA-Z][a-zA-Z]*){2,32}$">
+                </p>
+              </div>
+              <div id="emailContainer" class="user-info">
+                <p>
+                  <label for="email">
+                    <span>EMAIL</span>
+                    <strong>
+                      <span aria-label="Email">*</span>
+                    </strong>
+                  </label>
+                  <input type="email" name="email" id="email" required placeholder="joe@example.com">
+                </p>
+              </div>
+                <div id="phoneContainer" class="user-info">
+                  <p>
+                    <label for="phone-number">
+                      <span>PHONE NUMBER</span>
+                    </label>
+                    <input type="tel" name="phone-number" id="phone-number" pattern="^((00|0|+)?353[1-9]{1}[0-9]{7,9})$" placeholder="+353859555123">
+                  </p>
+                </div>
+              <div id="passContainer" class="user-info">
+                <p>
+                  <label for="password">
+                    <span>PASSWORD</span>
+                    <strong>
+                      <span aria-label="required">*</span>
+                    </strong>
+                  </label>
+                  <input type="password" name="password" id="password" required minlength="8" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
+                  <p id="passErr" class="error-message"><em>*passwords do not match</em></p>
+                </p>
+              </div>
+              <div id="passConfContainer" class="user-info">
+                <p>
+                  <label for="password-confirm">
+                    <span>CONFIRM PASSWORD</span>
+                    <strong>
+                      <span aria-label="required">*</span>
+                    </strong>
+                  </label>
+                  <input type="password" name="password-confirm" id="password-confirm" required minlength="8" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
+                </p>
+              </div>
             </form>
           </fieldset>
         </seciton>
-        <button type="submit" form="signUpForm">Create Account</button>
+        <button type="submit" id="sign-up-submit" form="signUpForm">Create Account</button>
         <p>Already have an account? <a href="#">Log in</a></p>
       </section>
     </div>

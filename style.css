@@ -6,14 +6,6 @@
 }
 
 @font-face {
-  font-family: pmono-regular;
-  src: url("/fonts/optimusprinceps/webfontkit-20240119-101115/optimusprinceps-webfont.woff2")
-      format("woff2"),
-    url("/fonts/optimusprinceps/webfontkit-20240119-101115/optimusprinceps-webfont.woff")
-      format("woff");
-}
-
-@font-face {
   font-family: pmono-bold;
   src: url("/fonts/optimusprinceps/webfontkit-20240119-101115/optimusprincepssemibold-webfont.woff2")
       format("woff2"),
@@ -24,32 +16,64 @@
 * {
   padding: 0;
   margin: 0;
-  /* border: 3px solid black; */
+}
+
+.hero,
+.main-content,
+p.call-to-action {
+  position: relative;
+}
+
+.logo-container,
+.form-container,
+.visually-hidden,
+button,
+button + p {
+  position: absolute;
+}
+
+body,
+.main-container,
+.hero,
+.main-content,
+.sign-up-form,
+.user-info {
+  display: flex;
+}
+
+.hero,
+.main-content,
+.user-info {
+  flex-direction: column;
+}
+
+.hero,
+.logo-container,
+.main-content,
+.form-container {
+  border: 1px solid rgba(0, 0, 0, 0.315);
+}
+
+p,
+.title,
+button {
+  font-family: "Roboto", var(--system-ui);
 }
 
 body {
-  display: flex;
-  flex-direction: row;
   justify-content: center;
   height: 100vh;
-  border-color: hotpink;
 }
 
 .main-container {
-  display: flex;
   flex: 1 1 auto;
   min-width: 1000px;
   max-width: 1600px;
-  border-color: aqua;
 }
 
 .hero {
-  display: flex;
-  flex-direction: column;
-  position: relative;
   flex: 1 1 0;
   min-width: 500px;
-  border: 1px solid rgba(0, 0, 0, 0.315);
   border-style: none none none solid;
 }
 
@@ -60,18 +84,16 @@ svg.hero {
 .logo-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  position: absolute;
   top: 20rem;
   width: 100%;
   height: 12rem;
   background-color: hsla(0, 0%, 57%, 0.158);
   box-shadow: 0rem 0.1rem 0.3rem 0rem rgba(0, 0, 0, 0.205);
-  border: 1px solid rgba(0, 0, 0, 0.315);
   border-style: solid solid none none;
 }
 
 .logo#logo-text {
-  font-family: pmono-regular;
+  font-family: pmono-bold;
   font-size: 3rem;
   justify-self: center;
   align-self: center;
@@ -84,18 +106,12 @@ svg.hero {
 }
 
 .main-content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
   flex: 2 1 auto;
-  border: 1px solid rgba(0, 0, 0, 0.315);
   border-style: none solid none none;
 }
 
 p.call-to-action {
-  position: relative;
   top: 14rem;
-  font-family: "Roboto", var(--system-ui);
   font-weight: 500;
   font-size: 2rem;
   color: rgb(53, 53, 53);
@@ -103,31 +119,31 @@ p.call-to-action {
   padding: 0 8rem 0 2rem;
 }
 
-p em {
+p.instructions > em,
+p.error-message > em {
   font-weight: 700;
   color: black;
-}
-
-p.instructions > em {
   font-family: Arial, var(--system-ui);
   font-size: 10px;
   font-weight: 200;
   padding: 0 0 0 3rem;
 }
 
+p.error-message > em {
+  color: red;
+  padding: 0;
+}
+
 .form-container {
-  position: absolute;
   width: 100%;
   height: 23rem;
   top: 32rem;
   background-color: rgba(102, 51, 153, 0.342);
   box-shadow: 0em 0.1em 0.3em 0em rgba(0, 0, 0, 0.205);
-  border: 1px solid rgba(0, 0, 0, 0.315);
   border-style: none none solid solid;
 }
 
 .title {
-  font-family: "Roboto", var(--system-ui);
   margin: 1rem 0 0 1rem;
   padding: 1rem 0 0 2rem;
 }
@@ -137,15 +153,12 @@ fieldset {
 }
 
 .sign-up-form {
-  /* border: 5px dashed white; */
   margin: 1rem 0 0 0;
-  display: flex;
   flex-wrap: wrap;
 }
 
-.sign-up-form > p {
-  display: flex;
-  flex-direction: column;
+.sign-up-form > p,
+.user-info {
   min-width: 30%;
   max-width: 30%;
   margin: 1rem;
@@ -153,8 +166,6 @@ fieldset {
 }
 
 label {
-  /* flex: 0 0 auto; */
-  font-family: "Roboto", var(--system-ui);
   color: rgb(32, 32, 32);
 }
 
@@ -176,29 +187,32 @@ input:user-invalid {
   border: 2px solid rgb(255, 75, 75);
 }
 
-button {
-  position: absolute;
-  top: 59rem;
+.error-message#passErr {
+  display: none;
+  color: red;
+}
+
+button,
+button + p {
   margin: 0 0 0 3rem;
-  width: 15rem;
-  height: 50px;
-  border: 1px solid rgb(121, 121, 121);
-  border-radius: 12px;
-  font-family: "Roboto", var(--system-ui);
   font-weight: 500;
   font-size: 1.3rem;
   color: rgb(32, 32, 32);
+}
+
+button {
+  top: 59rem;
+  height: 50px;
+  border: 1px solid rgb(121, 121, 121);
+  border-radius: 12px;
   background-color: rgba(102, 51, 153, 0.342);
   cursor: pointer;
   box-shadow: -0.2em 0.2em 0.3em 0em rgba(0, 0, 0, 0.205);
+  width: 15rem;
 }
 
 button + p {
-  position: absolute;
   top: 65rem;
-  margin: 0 0 0 3rem;
-  font-family: "Roboto", var(--system-ui);
-  font-size: 1.3rem;
 }
 
 a:link,
@@ -210,12 +224,10 @@ a:hover {
 }
 
 .visually-hidden {
-  position: absolute;
   width: 1px;
   height: 1px;
   margin: -1px;
   padding: 0;
-  overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
